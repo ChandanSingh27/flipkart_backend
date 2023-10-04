@@ -9,7 +9,16 @@ const productsList = async (req,res) => {
                 console.log(error)
         }
 }
-
+const popularProductsList = async (req,res) => {
+        try{
+                const data = await Products.find({
+                        "rating":{$gt:4.3}
+                })
+                res.json(data)
+        }catch(error) {
+                console.log(error)
+        }
+}
 const searchProducts = async (req,res)=> {
         try{
                 let searchKey = req.params.searchkey
@@ -41,4 +50,4 @@ const addProduct = async (req,res) => {
                 console.log(error)
         }
 }
-module.exports = {productsList,addProduct,searchProducts}
+module.exports = {productsList,addProduct,searchProducts,popularProductsList}
