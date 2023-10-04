@@ -5,7 +5,11 @@ const DatabaseConnection = require('./databases/database_connection.js')
 const router = require('./routes/products_routes/get_products.js')
 
 app.use(bodyParser.json())
-
+app.use(cors({
+        credentials: true,
+        methods: ['GET,POST,PUT,DELETE'],
+        origin: ['*']
+}))
 DatabaseConnection()
 
 app.get('/',(req,res)=>{
