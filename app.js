@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const app = express()
 const DatabaseConnection = require('./databases/database_connection.js')
 const router = require('./routes/products_routes/get_products.js')
