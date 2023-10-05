@@ -21,24 +21,35 @@ const popularProductsList = async (req,res) => {
 }
 const searchProducts = async (req,res)=> {
         try{
-                let searchKey = req.params.searchkey
-                const phoneName = ['mobiles','mobile','mobile phone','mobile phones','Cell Phones','smartphones','android phone']
-                if(phoneName.includes(searchKey.toLowerCase())) searchKey = "phone"
-                let searchProducts = await Products.find(
-                {
-                        $or: [
-                                {productName: {$regex: searchKey,$options:"i"},},
-                                {brand: {$regex: searchKey,$options:"i"},}
-                        ]
-                }
-                )
-                if(searchProducts.length == 0) {
-                        searchProducts = await Products.find()
-                }
-                res.json(searchProducts)
+                let searchKey = req.query.q
+
+                let products = await Products.find({ $or: searchKeyword(searchKey,"productName") });
+                if(products.length != 0) return res.json(products)
+
+                products = await Products.find({ $or: searchKeyword(searchKey,"description") });
+                if(products.length != 0) return res.json(products)
+
+                products = await Products.find({ $or: searchKeyword(searchKey,"category") });
+                if(products.length != 0) return res.json(products)
+
+                products = await Products.find({ $or: searchKeyword(searchKey,"brand") });
+                if(products.length != 0) return res.json(products)
+
+                products = await Products.find({});
+                return res.json(products)
+
+
         }catch(error) {
                 console.log(error);
         }
+}
+
+const searchKeyword = (searchKey,searchParameter) => {
+        const keywords = searchKey.split(' ');
+        const searchConditions = keywords.map((keyword) => ({
+                [searchParameter]: { $regex: new RegExp(keyword, 'i') },
+        }));
+        return searchConditions
 }
 
 const addProduct = async (req,res) => {
@@ -50,4 +61,5 @@ const addProduct = async (req,res) => {
                 console.log(error)
         }
 }
+
 module.exports = {productsList,addProduct,searchProducts,popularProductsList}

@@ -162,7 +162,7 @@ const products = [
                 "category":"fashion",
                 "productImage":"https://rukminim2.flixcart.com/image/128/128/kzrbiq80/sari/j/4/d/free-mk-zal-cosbila-fashion-unstitched-original-imagbpgmfvx7cehu.jpeg?q=70",
                 "brand":"COSBILA",
-                "rating":4,
+                "rating":4.1,
         },
         {
                 "productName":"Printed, Blocked Printed Hand Batik Chiffon Saree  (Pink, White)",
@@ -171,7 +171,7 @@ const products = [
                 "category":"fashion",
                 "productImage":"https://rukminim2.flixcart.com/image/128/128/xif0q/sari/p/k/s/free-37995-mirchi-fashion-unstitched-original-imagn24huyy7w7sx.jpeg?q=70",
                 "brand":"MIRCHI",
-                "rating":4,
+                "rating":4.2,
         },
         {
                 "productName":"Woven Banarasi Cotton Silk Saree  (Blue, Pink)",
@@ -180,7 +180,7 @@ const products = [
                 "category":"fashion",
                 "productImage":"https://rukminim2.flixcart.com/image/128/128/xif0q/sari/n/t/e/free-mk-zal-cosbila-fashion-unstitched-original-imagkuzjj9gwh6j6.jpeg?q=70",
                 "brand":"COSBILA",
-                "rating":4,
+                "rating":4.2,
         },
         {
                 "productName":"Men Straight Full Sleeve Multicolor Shrug",
@@ -189,7 +189,7 @@ const products = [
                 "category":"fashion",
                 "productImage":"https://rukminim2.flixcart.com/image/128/128/kfsl18w0/jacket/e/m/p/l-ind00037-s-indra-fashion-original-imafw6dzyc9fhaxk.jpeg?q=70",
                 "brand":"INDRA",
-                "rating":4,
+                "rating":4.4,
         },
         {
                 "productName":"Men Printed Round Neck Pure Cotton Dark Green T-Shirt",
@@ -198,7 +198,7 @@ const products = [
                 "category":"fashion",
                 "productImage":"https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/2/v/v/xl-aopleaffull-drgreen-urbano-fashion-original-imafvzqqbfbfvprv-bb.jpeg?q=70",
                 "brand":"urbano",
-                "rating":4,
+                "rating":4.1,
         },
         //grocery
         {

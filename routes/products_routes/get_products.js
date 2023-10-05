@@ -5,6 +5,6 @@ const {productsList,addProduct,searchProducts,popularProductsList} = require('./
 router.get('/products/',productsList)
 router.get('/popular-product/',popularProductsList)
 router.post('/add',addProduct)
-router.get('/search-product/:searchkey',searchProducts)
+router.get('/search/',searchProducts)
 
 module.exports = router
