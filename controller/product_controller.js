@@ -62,4 +62,15 @@ const addProduct = async (req,res) => {
         }
 }
 
-module.exports = {productsList,addProduct,searchProducts,popularProductsList}
+const wishListProduct = async (req,res) => {
+        try{
+                let id = req.body.ids
+                console.log(id);
+                const data = await Products.find({_id: {$in: id}})
+                res.json(data)
+        }catch(error) {
+                console.log(error)
+        }
+}
+
+module.exports = {productsList,addProduct,searchProducts,popularProductsList,wishListProduct}
